@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centrar un div con botón de cerrar</title>
+    <style>
+      /* Estilo para el contenedor */
+      .popAbr {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+        display: none;
+      }
+      /* Estilo para el div interno */
+      .popInter {
+        width: 300px;
+        height: 200px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+      }
+      /* Estilo para el botón de cerrar */
+      .popClose {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Botón para abrir el div -->
+    <span class="popClose" onclick="OpenPop()">X</span>
+
+    <!-- Contenedor -->
+    <div class="popAbr" id="idabrir">
+      <!-- Div para centrar -->
+      <div class="popInter">
+        <!-- Contenido -->
+        <p>Este es el contenido del div centrado.</p>
+        <!-- Botón para cerrar -->
+        <span class="popClose" onclick="ClosPop()">X</span>
+      </div>
+    </div>
+
+    <script>
+      // Función para abrir el div
+      function OpenPop() {
+        document.getElementById("idabrir").style.display = "block";
+      }
+
+      // Función para cerrar el div
+      function ClosPop() {
+        document.getElementById("idabrir").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
